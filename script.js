@@ -1,29 +1,50 @@
-const themebutton = document.getElementById("theme-toggle");
-themebutton.addEventListener("click", () => {
-    alert("Button Clicked!");
+// ================= DARK MODE =================
+
+const themeButton = document.getElementById("theme-toggle");
+
+themeButton.addEventListener("click", () => {
+
+    // Remove this after testing
+    // alert("Button Clicked!");
+
     document.body.classList.toggle("dark-mode");
+
     if (document.body.classList.contains("dark-mode")) {
-        themebutton.textContent = "☀️";
+        themeButton.textContent = "☀️";
     } else {
-        themebutton.textContent = "🌙";
+        themeButton.textContent = "🌙";
     }
 });
-const typingtext=document.getElementById("typing-text");
-const roles=[
-    "java Developer",
-    "Spring boot Developer",
+
+
+// ================= TYPING ANIMATION =================
+
+const typingText = document.getElementById("typing-text");
+
+const roles = [
+    "Java Developer",
+    "Spring Boot Developer",
     "Frontend Developer"
 ];
-let index=0;
-setInterval(()=>{
-    typingtext.textContent=roles[index];
-    index++;
-    if(index==roles.length){
-        index=0;
-    }
-},2000);
-const menuBtn = document.getElementById("menu-btn");
 
+let index = 0;
+
+setInterval(() => {
+
+    typingText.textContent = roles[index];
+
+    index++;
+
+    if (index === roles.length) {
+        index = 0;
+    }
+
+}, 2000);
+
+
+// ================= MOBILE MENU =================
+
+const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 
 menuBtn.addEventListener("click", () => {
@@ -31,15 +52,17 @@ menuBtn.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 
 });
-const hiddenElements =
-document.querySelectorAll(".hidden");
+
+
+// ================= SCROLL ANIMATION =================
+
+const hiddenElements = document.querySelectorAll(".hidden");
 
 window.addEventListener("scroll", () => {
 
     hiddenElements.forEach((element) => {
 
-        const top =
-        element.getBoundingClientRect().top;
+        const top = element.getBoundingClientRect().top;
 
         if (top < window.innerHeight - 100) {
 

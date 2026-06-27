@@ -333,15 +333,34 @@ body.dark-mode .hero-text p {
 @media (max-width: 768px) {
 
     nav {
-        flex-direction: column;
-        padding: 15px;
-        gap: 15px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
     }
 
-    nav ul {
+    #menu-btn {
+        display: block;
+    }
+
+    #nav-links {
+        display: none;
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        position: absolute;
+        top: 80px;
+        left: 0;
+
+        width: 100%;
+        background-color: #0f172a;
+
+        padding: 20px 0;
+        gap: 20px;
+
+        text-align: center;
+    }
+
+    #nav-links.active {
+        display: flex;
     }
 
     .hero {
@@ -376,6 +395,7 @@ body.dark-mode .hero-text p {
     .about img {
         width: 100%;
         max-width: 300px;
+        margin: auto;
     }
 
     .skills {
